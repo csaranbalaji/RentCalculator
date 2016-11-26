@@ -17,3 +17,7 @@ th{
 a{
 	font-size: 20px; 
 }
+.sel{
+	background-color: lavender;
+	width: 50%;
+}

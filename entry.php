@@ -22,6 +22,21 @@
 	<br/><br/>
 	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
 		<table class="table table-striped">
+			<tr><td>Select Month</td>
+			<td><select required class="sel" name="month"><option value="">Select...</option>
+					<option value="1">Jan</option>
+					<option value="2">Feb</option>
+					<option value="3">Mar</option>
+					<option value="4">Apr</option>
+					<option value="5">May</option>
+					<option value="6">Jun</option>
+					<option value="7">Jul</option>
+					<option value="8">Aug</option>
+					<option value="9">Sep</option>
+					<option value="10">Oct</option>
+					<option value="11">Nov</option>
+					<option value="12">Dec</option>
+					</select></td></tr>
 			<tr><th>Tenant</th><th>EB Reading</th></tr>
 	<?php
 		include 'credentials.php';
@@ -44,7 +59,7 @@
 	<?php
 		if(isset($_REQUEST["btnSubmit"]))
 		{
-			$month = 3;
+			$month = $_REQUEST['month'];
 			for($inc=1;$inc<$i;$inc++)
 			{		 
 				$sql="update EB set  m".$month."=".$_REQUEST['t'.$inc.'']." where Num=".$inc;
