@@ -3,6 +3,7 @@
 <title>Rent Calc</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/rent.css">
 </head>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -10,15 +11,18 @@
       <a class="navbar-brand" href="#">Rent Calc</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href="#">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="#">List Tenants</a></li>
-      <li><a href="#">Entry</a></li>
+      <li class="active"><a href="#">Entry</a></li>
       <li><a href="#">Display</a></li>
     </ul>
   </div>
 </nav>
 <body>
-	<form action="" method="post" enctype="multipart/form-data">
+	<br/><br/>
+	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
+		<table class="table table-striped">
+			<tr><th>Tenant</th><th>EB Reading</th></tr>
 	<?php
 		include 'credentials.php';
 		$sql="select Name from Tenants";
@@ -27,13 +31,15 @@
 		$i=1;
 		if($result->num_rows > 0){
 			while ($row = $result->fetch_assoc()){
-				echo "<b>".$row['Name'].": </b>"."<input type='text' class='form-control' id='t".$i."' placeholder='t".$i."' name='t".$i."'>"."<br>";
+				echo "<tr><td><label>".$row['Name']."</label></td>"."<td><input type='text' class='form-control' id='t".$i."' placeholder='Meter ".$i."' name='t".$i."'>"."</td></tr>";
 				$i=$i+1;
 			}
 		}
 		
 	?>
-	<input id="btnSubmit" type="submit" name="btnSubmit"  value="Submit"/>
+	</table>
+	<input id="btnSubmit" type="submit" class="btn btn-primary" name="btnSubmit"  value="Submit"/>
+	
 	</form>
 	<?php
 		if(isset($_REQUEST["btnSubmit"]))
@@ -46,8 +52,7 @@
 			}		
 			if($result>0)
 			{
-				ob_clean();
-				echo nl2br("\n <p1>Registered succesfully!!! </p1>");
+				echo nl2br("\n <div class='alert alert-success' align='center'><strong>Success!</strong> Data Has Been Entered Successfully.</div>");
 			}
 			$con->close();
 		}
