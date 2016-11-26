@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Rent Calc</title>
+<title>Data Entry</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/rent.css">
@@ -12,9 +12,9 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.html">Home</a></li>
-      <li><a href="#">List Tenants</a></li>
+      <li><a href="list.php">List Tenants</a></li>
       <li class="active"><a href="#">Entry</a></li>
-      <li><a href="#">Display</a></li>
+      <li><a href="display.php">Display</a></li>
     </ul>
   </div>
 </nav>
@@ -37,6 +37,8 @@
 					<option value="11">Nov</option>
 					<option value="12">Dec</option>
 					</select></td></tr>
+			</table><br/><br/>
+			<table class="table table-striped">
 			<tr><th>Tenant</th><th>EB Reading</th></tr>
 	<?php
 		include 'credentials.php';
