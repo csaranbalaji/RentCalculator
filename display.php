@@ -53,11 +53,11 @@
 		$i=1;
 		if($result->num_rows > 0){
 			while ($row = $result->fetch_assoc()){
-				$units = $row['m'.$month] - $row['m'.($month-1)];
-				$eb = $units*6;
+				$units = $row['m'.$month] - $row['m'.($month-1)]; // Units Consumed
+				$eb = $units*6; // Basic Slab
 				if($units>250) 
-					$eb = 250*6 + ($units-250)*7.5;
-				$total = $row['Rent'] + $eb;
+					$eb = 250*6 + ($units-250)*7.5; // Normal Slab 
+				$total = $row['Rent'] + $eb + 250; // Rent + EB + Maintainance cost
 				$sum = $sum + $total;
 				echo "<tr><td><label>".$row['Name']."</label></td>"."
 				<td>".$row['Rent']."</td>

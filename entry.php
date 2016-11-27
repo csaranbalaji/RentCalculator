@@ -45,7 +45,7 @@
 		$sql="select Name from Tenants";
 		$result = $con->query($sql);
 		
-		$i=1;
+		$i=1; // To get number of tenants 
 		if($result->num_rows > 0){
 			while ($row = $result->fetch_assoc()){
 				echo "<tr><td><label>".$row['Name']."</label></td>"."<td><input type='text' class='form-control' id='t".$i."' placeholder='Meter ".$i."' name='t".$i."'>"."</td></tr>";

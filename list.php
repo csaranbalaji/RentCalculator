@@ -32,7 +32,7 @@
 		$sql="select * from Tenants";
 		$result = $con->query($sql);
 		
-		$i=1;
+		$i=1; // To get number of Tenants
 		if($result->num_rows > 0){
 			while ($row = $result->fetch_assoc()){
 				echo "<tr><td><label>".$row['Name']."</label></td>"."<td>".$row['Rent']."</td></tr>";
