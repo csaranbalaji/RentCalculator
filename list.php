@@ -72,6 +72,7 @@
 			else
 				echo nl2br("\n <div class='alert alert-danger' align='center'><strong>Failure!</strong> Data has not been entered due to an ERROR.</div>");
 		}
+		$con->close();
 	?>
 </body>
 </html>

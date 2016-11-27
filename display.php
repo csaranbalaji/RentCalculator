@@ -77,6 +77,7 @@
 			while ($row = $result->fetch_assoc())
 				echo "<tr style='color:brown;'><td><label>Total</label></td>"."<td>".$row['total']."</td><td></td><td></td><td></td><td></td><td>".$sum."</td></tr>";
 		}
+		$con->close();
 	}
 	?>
 		</table>	
