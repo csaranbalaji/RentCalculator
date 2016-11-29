@@ -12,7 +12,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.html">Home</a></li>
-      <li><a href="list.php">List Tenants</a></li>
+      <li><a href="list.php">Show Tenants</a></li>
       <li><a href="entry.php">Entry</a></li>
       <li class="active"><a href="display.php">Display</a></li>
     </ul>

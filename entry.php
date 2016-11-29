@@ -12,8 +12,8 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.html">Home</a></li>
-      <li><a href="list.php">List Tenants</a></li>
-      <li class="active"><a href="#">Entry</a></li>
+      <li><a href="list.php">Show Tenants</a></li>
+      <li class="active"><a href="entry.php">Entry</a></li>
       <li><a href="display.php">Display</a></li>
     </ul>
   </div>
@@ -48,7 +48,7 @@
 		$i=1; // To get number of tenants 
 		if($result->num_rows > 0){
 			while ($row = $result->fetch_assoc()){
-				echo "<tr><td><label>".$row['Name']."</label></td>"."<td><input type='text' class='form-control' id='t".$i."' placeholder='Meter ".$i."' name='t".$i."'>"."</td></tr>";
+				echo "<tr><td><label>".$row['Name']."</label></td>"."<td><input type='text' class='form-control' id='t".$i."' placeholder='Meter Reading ".$i."' name='t".$i."'>"."</td></tr>";
 				$i=$i+1;
 			}
 		}
