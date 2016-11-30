@@ -65,8 +65,6 @@
 			$result = $con->query($sql);
 			if($result)
 			{	
-				$sql="insert into EB(num) values($i)";
-				$result = $con->query($sql);
 				header("location: list.php");
 			}
 			else

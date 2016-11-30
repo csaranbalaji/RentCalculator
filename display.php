@@ -47,7 +47,11 @@
 	if(isset($_REQUEST["btnSubmit"]))
 	{
 		$month = $_REQUEST['month'];
-		$sql="select Name,Rent,m".($month-1).",m".$month." from Tenants,EB where Tenants.num=EB.num";
+		if($month==1)
+			$lastmonth = 12;
+		else
+			$lastmonth = $month-1;
+		$sql="select Name,Rent,m".$lastmonth.",m".$month." from Tenants,EB where Tenants.num=EB.num";
 		$result = $con->query($sql);
 		
 		$i=1;
@@ -77,8 +81,8 @@
 			while ($row = $result->fetch_assoc())
 				echo "<tr style='color:brown;'><td><label>Total</label></td>"."<td>".$row['total']."</td><td></td><td></td><td></td><td></td><td>".$sum."</td></tr>";
 		}
-		$con->close();
 	}
+	$con->close();
 	?>
 		</table>	
 </body>
