@@ -23,7 +23,7 @@
 	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
 		<table class="table table-striped">
 			<tr><td>Select Month</td>
-			<td><select required class="sel" name="month"><option value="">Select...</option>
+			<td><select required class="sel" id="month" name="month"><option value="0">Select...</option>
 					<option value="1">Jan</option>
 					<option value="2">Feb</option>
 					<option value="3">Mar</option>
@@ -36,7 +36,8 @@
 					<option value="10">Oct</option>
 					<option value="11">Nov</option>
 					<option value="12">Dec</option>
-					</select></td></tr>
+					</select></td>
+					<td><input id="btnDisp" type="submit" class="btn btn-primary" name="btnDisp"  value="GO"/></td></tr>
 			</table><br/><br/>
 			<table class="table table-striped">
 			<tr><th>Tenant</th><th>EB Reading</th></tr>
@@ -59,6 +60,7 @@
 	
 	</form>
 	<?php
+		$j=1;$mon=0;
 		if(isset($_REQUEST["btnSubmit"]))
 		{
 			$month = $_REQUEST['month'];
@@ -71,8 +73,30 @@
 			{
 				echo nl2br("\n <div class='alert alert-success' align='center'><strong>Success!</strong> Data Has Been Entered Successfully.</div>");
 			}
-			$con->close();
 		}
+		if(isset($_REQUEST["btnDisp"]))
+		{
+			$mon = $_REQUEST['month'];
+			$sql="select m".$mon." from EB";
+			$result = $con->query($sql);
+			if($result->num_rows > 0){
+			while ($row = $result->fetch_assoc()){
+				$EB[$j] = $row['m'.$mon];
+				$j = $j+1;
+			}
+		}
+		}
+		$con->close();
 	?>
 </body>
+<script type="text/javascript">
+	document.getElementById('t'+1).value = <?php echo $EB[1]; ?>;
+	document.getElementById('t'+2).value = <?php echo $EB[2]; ?>;
+	document.getElementById('t'+3).value = <?php echo $EB[3]; ?>;
+	document.getElementById('t'+4).value = <?php echo $EB[4]; ?>;
+	document.getElementById('t'+5).value = <?php echo $EB[5]; ?>;
+	document.getElementById('t'+6).value = <?php echo $EB[6]; ?>;
+	document.getElementById('t'+7).value = <?php echo $EB[7]; ?>;
+	document.getElementById('month').value = '<?php echo $mon; ?>';
+</script>
 </html>
