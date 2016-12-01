@@ -23,7 +23,7 @@
 	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
 		<table class="table table-striped">
 			<tr><td>Select Month</td>
-			<td><select required class="sel" name="month"><option value="">Select...</option>
+			<td><select required class="sel" id="month" name="month"><option value="0">Select...</option>
 					<option value="1">Jan</option>
 					<option value="2">Feb</option>
 					<option value="3">Mar</option>
@@ -44,6 +44,7 @@
 			<tr><th>Tenant</th><th>Rent</th><th>Last Month</th><th>This Month</th><th>Units</th><th>EB</th><th>Total</th></tr>
 	<?php
 	include 'credentials.php';
+	$month=0;
 	if(isset($_REQUEST["btnSubmit"]))
 	{
 		$month = $_REQUEST['month'];
@@ -57,7 +58,7 @@
 		$i=1;
 		if($result->num_rows > 0){
 			while ($row = $result->fetch_assoc()){
-				$units = $row['m'.$month] - $row['m'.($month-1)]; // Units Consumed
+				$units = $row['m'.$month] - $row['m'.$lastmonth]; // Units Consumed
 				$eb = $units*6; // Basic Slab
 				if($units>250) 
 					$eb = 250*6 + ($units-250)*7.5; // Normal Slab 
@@ -65,7 +66,7 @@
 				$sum = $sum + $total;
 				echo "<tr><td><label>".$row['Name']."</label></td>"."
 				<td>".$row['Rent']."</td>
-				<td>".$row['m'.($month-1)]."</td>
+				<td>".$row['m'.$lastmonth]."</td>
 				<td>".$row['m'.$month]."</td>
 				<td>".$units."</td>
 				<td>".$eb."</td>
@@ -84,6 +85,10 @@
 	}
 	$con->close();
 	?>
-		</table>	
+		</table>
+		<button onclick="window.print();" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>	
 </body>
+<script type="text/javascript">
+	document.getElementById('month').value = '<?php echo $month; ?>';
+</script>
 </html>
