@@ -90,13 +90,9 @@
 	?>
 </body>
 <script type="text/javascript">
-	document.getElementById('t'+1).value = <?php echo $EB[1]; ?>;
-	document.getElementById('t'+2).value = <?php echo $EB[2]; ?>;
-	document.getElementById('t'+3).value = <?php echo $EB[3]; ?>;
-	document.getElementById('t'+4).value = <?php echo $EB[4]; ?>;
-	document.getElementById('t'+5).value = <?php echo $EB[5]; ?>;
-	document.getElementById('t'+6).value = <?php echo $EB[6]; ?>;
-	document.getElementById('t'+7).value = <?php echo $EB[7]; ?>;
+	var EB = <?php echo json_encode($EB) ?>;
+	for(i=1;i < <?php echo $j ?>;i++)
+		document.getElementById('t'+i).value = EB[i];
 	document.getElementById('month').value = '<?php echo $mon; ?>';
 </script>
 </html>
