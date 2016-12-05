@@ -23,7 +23,7 @@
 	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
 		<table class="table table-striped">
 			<tr><td>Select Month</td>
-			<td><select required class="sel" id="month" name="month"><option value="0">Select...</option>
+			<td><select required onchange="disp()" class="sel" id="month" name="month"><option value="0">Select...</option>
 					<option value="1">Jan</option>
 					<option value="2">Feb</option>
 					<option value="3">Mar</option>
@@ -38,7 +38,7 @@
 					<option value="12">Dec</option>
 					</select></td></tr>
 			</table><br/>
-			<input id="btnSubmit" type="submit" class="btn btn-primary" name="btnSubmit"  value="Submit"/>
+			
 	</form><br/>
 		<table class="table table-striped">
 			<tr><th>Tenant</th><th>Rent</th><th>Last Month</th><th>This Month</th><th>Units</th><th>EB</th><th>Total</th></tr>
@@ -89,6 +89,10 @@
 		<button onclick="window.print();" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Print</button>	
 </body>
 <script type="text/javascript">
+	function disp(){
+		var x = document.getElementById('month').value;
+		document.location = 'display.php?btnSubmit=true&month='+x;
+		}
 	document.getElementById('month').value = '<?php echo $month; ?>';
 </script>
 </html>

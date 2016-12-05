@@ -23,7 +23,7 @@
 	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
 		<table class="table table-striped">
 			<tr><td>Select Month</td>
-			<td><select required class="sel" id="month" name="month"><option value="0">Select...</option>
+			<td><select required onchange="disp()" class="sel" id="month" name="month"><option value="0">Select...</option>
 					<option value="1">Jan</option>
 					<option value="2">Feb</option>
 					<option value="3">Mar</option>
@@ -37,7 +37,7 @@
 					<option value="11">Nov</option>
 					<option value="12">Dec</option>
 					</select></td>
-					<td><input id="btnDisp" type="submit" class="btn btn-primary" name="btnDisp"  value="GO"/></td></tr>
+					</tr>
 			</table><br/><br/>
 			<table class="table table-striped">
 			<tr><th>Tenant</th><th>EB Reading</th></tr>
@@ -90,6 +90,10 @@
 	?>
 </body>
 <script type="text/javascript">
+	function disp(){
+		var x = document.getElementById('month').value;
+		document.location = 'entry.php?btnDisp=true&month='+x;
+		}
 	var EB = <?php echo json_encode($EB) ?>;
 	for(i=1;i < <?php echo $j ?>;i++)
 		document.getElementById('t'+i).value = EB[i];
