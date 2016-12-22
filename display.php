@@ -21,7 +21,7 @@
 <body>
 	<br/><br/>
 	<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
-		<table class="table table-striped">
+		<table class="table table-striped table-bordered">
 			<tr><td>Select Month</td>
 			<td><select required onchange="disp()" class="sel" id="month" name="month"><option value="0">Select...</option>
 					<option value="1">Jan</option>
@@ -40,7 +40,7 @@
 			</table><br/>
 			
 	</form><br/>
-		<table class="table table-striped">
+		<table class="table table-striped table-bordered">
 			<tr><th>Tenant</th><th>Rent</th><th>Last Month</th><th>This Month</th><th>Units</th><th>EB</th><th>Total</th></tr>
 	<?php
 	include 'credentials.php';

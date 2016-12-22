@@ -25,7 +25,7 @@
 </nav>
 <body>
 	<br/><br/>
-		<table class="table table-striped" align="center">
+		<table class="table table-striped table-bordered" align="center">
 			<tr><th>Tenant</th><th>Rent</th><th></th></tr>
 	<?php
 		include 'credentials.php';
@@ -49,7 +49,7 @@
 	?>
 		</table><br/><br/>
 		<form  class="container-fluid" action="" method="post" enctype="multipart/form-data">
-			<table class="table table-striped" align="center">
+			<table class="table table-striped table-bordered" align="center">
 				<th>Add a new Tenant</th><th></th><th></th>
 				<tr width=40%><td><input id="Name" class="form-control" type="text" name="Name"  placeholder="Name" required maxlength="15" /></td>
 				<td width=30%><input id="Rent" class="form-control" type="text" name="Rent"  placeholder="Rent" required /></td>
