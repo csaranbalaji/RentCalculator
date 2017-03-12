@@ -53,7 +53,7 @@
 				<th>Add a new Tenant</th><th></th><th></th>
 				<tr width=40%><td><input id="Name" class="form-control" type="text" name="Name"  placeholder="Name" required maxlength="15" /></td>
 				<td width=30%><input id="Rent" class="form-control" type="text" name="Rent"  placeholder="Rent" required /></td>
-				<td><input id="btnadd" type="submit" class="btn btn-primary" name="btnadd"  value="Add"/></td></tr>
+				<td><input id="btnadd" type="submit" class="btn btn-primary sml" name="btnadd"  value="Add"/></td></tr>
 			</table>	
 		</form>
 	<?php
