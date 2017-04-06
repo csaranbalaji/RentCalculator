@@ -1,7 +1,7 @@
 # RentCalculator
 WebApp for Rent Calculation using php
 
-##Database Structure
+## Database Structure
 
 `mysql> use rent;`
 
@@ -12,7 +12,7 @@ WebApp for Rent Calculation using php
 | Tenants        |
 | EB             |
 
-###Tenants
+### Tenants
 `mysql> desc Tenants;`
 
 | Field | Type     | Null | Key | Default | Extra |
@@ -21,7 +21,7 @@ WebApp for Rent Calculation using php
 | Rent  | int(11)  | YES  |     | NULL    |       |
 | Num   | int(11)  | NO   | PRI | 0       |       |
 
-###EB
+### EB
 `mysql> desc EB;`
 
 | Field | Type     | Null | Key | Default | Extra |
