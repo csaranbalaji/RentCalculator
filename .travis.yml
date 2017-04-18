@@ -7,7 +7,7 @@ service:
 install:
   - composer install
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS baladay;'  
-  - mysql -u root --default-character-set=utf8 baladay < scripts/bd.sql
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS rent;'  
+  - mysql -u root --default-character-set=utf8 rent < sample.sql
 script:
   - vendor/bin/phpunit
