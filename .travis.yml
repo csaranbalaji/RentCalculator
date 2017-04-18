@@ -8,6 +8,6 @@ install:
   - composer install
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS rent;'  
-  - mysql -u root --default-character-set=utf8 rent < sample.sql
+  - mysql -u root --default-character-set=utf8 rent < SampleDatabase.sql
 script:
   - vendor/bin/phpunit
