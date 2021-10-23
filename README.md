@@ -1,6 +1,12 @@
 # RentCalculator
 A basic rent calculator which is used for managing accounts for tenants and generating rent recipts. 
 
+## Features
+- Add and remove tenants on the go.
+- Rename tenants when they change.
+- EB reading entry and hassle-free calculations.
+- Generate summary with monthly calculations.
+
 ## Database Structure
 
 `mysql> use rent;`
