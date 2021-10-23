@@ -1,5 +1,5 @@
 # RentCalculator
-WebApp for Rent Calculation using php
+A basic rent calculator which is used for managing accounts for tenants and generating rent recipts. 
 
 ## Database Structure
 
