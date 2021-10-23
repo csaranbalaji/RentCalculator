@@ -5,8 +5,69 @@
 <script src="js/bootstrap.min.js"></script>
 <style>
 p,a{
-	font-size: 20px; 
+  font-size: 20px; 
 }
+* {
+  box-sizing: border-box;
+}
+
+figure {
+  margin: auto;
+}
+
+body {
+  margin: 0;
+}
+
+figcaption {
+  height: 1.2em;
+  width: 100%;
+  margin-top: -10%;
+  margin-right: -3%;
+  float: right;
+  text-align: left;
+  color: Black;
+  z-index: 1;
+  font-size: 12px;
+  font-family: helvetica;
+  text-transform: uppercase;
+}
+
+img {
+    z-index: -1;
+    position: relative;
+    width: 100%;
+}
+
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 33%; /* IE 10 */
+  flex: 33%;
+}
+
+.column img {
+  vertical-align: middle;
+}
+
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      list-style-type: none;
+      position: relative;
+      left: -50px;
+    }
+
 </style>
 </head>
 <nav class="navbar navbar-inverse">
@@ -24,8 +85,36 @@ p,a{
 </nav>
 <body>  
 <div class="container">
-  <h1>About</h1>
-  <p>Rent Calc is a WebApp for Rent calculation based on EB usage</p>
+  <h1>Rent Calculator</h1>
+  <p>A tool which could be used by owners for calculating rents for their tenants based on EB usage</p>
 </div>
+
+<br/><br/>
+
+<main>
+  <ul>
+    <li>
+      <figure>
+        <img src="ScreenShots/2017-01-15-173643_1024x768_scrot.png" alt="cat" >
+          <figcaption>Tenant List</figcaption>
+        </figure>
+    </li>
+    <li>
+      <figure>
+        <img src="ScreenShots/2017-01-15-173700_1024x768_scrot.png" alt="cat" >
+          <figcaption>Eb reading entry</figcaption>
+        </figure>
+    </li>
+    <li>
+        <figure>
+        <img src="ScreenShots/2017-01-15-173711_1024x768_scrot.png" alt="cat" >
+          <figcaption>Summary</figcaption>
+        </figure>
+    </li>
+  </ul>
+</main>
+<br/><br/>
+<center><button type="button" class="btn btn-primary" onclick="location.href='list.php'">Get Started</button></center>
+
 </body>
 </html>
