@@ -49,3 +49,7 @@ A basic rent calculator which is used for managing accounts for tenants and gene
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/56619570/138549818-7eda4fe8-3ee5-4ee9-8a52-1fc6c0762804.png)
 
+## Contributers
+- [Saran Balaji C](https://github.com/csaranbalaji)
+- [jcsekar](https://github.com/jcsekar)
+
